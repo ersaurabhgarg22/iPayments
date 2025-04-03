@@ -12,6 +12,7 @@ public class PaymentProcessorService {
     private final LogService logService;
     private final BrokerInvokerService brokerInvokerService;
 
+
     public PaymentProcessorService(PaymentValidatorService validatorService, LogService logService, BrokerInvokerService brokerInvokerService) {
         this.validatorService = validatorService;
         this.logService = logService;
@@ -25,16 +26,6 @@ public class PaymentProcessorService {
         }
         logService.logInfo("Valid payment. Sending to broker system.");
         brokerInvokerService.sendForFraudCheck(payment);
-        return "Payment sent for fraud check";
-    }
-
-    public String processPaymentAPI(Payment payment) throws JsonProcessingException {
-        if (!validatorService.validate(payment)) {
-            logService.logError("Payment validation failed", null);
-            return "Invalid payment details";
-        }
-        logService.logInfo("Valid payment. Sending to broker system.");
-        brokerInvokerService.sendForFraudCheckAPI(payment);
         return "Payment sent for fraud check";
     }
 }
