@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class ActiveMQConsumer {
     private final LogService logService;
     private FraudCheckRequestHandler fraudCheckRequestHandler;
-    private FraudCheckResponseHandler  fraudCheckResponseHandler;
+    private FraudCheckResponseHandler fraudCheckResponseHandler;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final XmlMapper xmlMapper = new XmlMapper();
 

@@ -41,17 +41,4 @@ public class PaymentReceiverController {
         }
     }
 
-//    @PostMapping("/processAPI")
-//    public ResponseEntity<String> processPaymentAPI(@RequestBody Payment payment) {
-//        try {
-//            logService.logInfo("Received payment request: " + payment);
-//            payment.setStatus(PaymentStatus.PENDING);
-//            payment.setCreationTimestamp(getISOUTCTimestamp());
-//            payment.setTransactionId(generateUUID());
-//            return ResponseEntity.ok(paymentProcessorService.processPaymentAPI(payment).toString());
-//        } catch (Exception e) {
-//            logService.logError(e.getMessage(), e);
-//            return null;
-//        }
-//    }
 }
