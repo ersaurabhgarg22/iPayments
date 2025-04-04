@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 
-@SpringBootTest
+
 public class PaymentReceiverControllerTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
