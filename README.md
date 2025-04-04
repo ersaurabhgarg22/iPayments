@@ -24,3 +24,16 @@ Please use different service to test different inputs!!
 
 Good Luck and Happy Coding!!
 
+Important:
+
+URLs for Solution 1 (JMS):
+http://localhost:8080/payment/process
+
+URL for Solution 2 (RestAPI):
+http://localhost:8080/payment/api/process
+
+Refer below files for UML
+
+**Overview of project:** Overview_iPayment_UML.drawio.png
+
+**InDepth details:** InDepth_iPayments_UMS.drawio.png
