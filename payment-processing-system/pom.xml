@@ -8,7 +8,10 @@
         <artifactId>instant-payments</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>pps</artifactId>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <artifactId>payment-processing-system</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.db.iPayments</groupId>

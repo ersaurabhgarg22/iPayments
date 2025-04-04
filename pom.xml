@@ -7,14 +7,16 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>pps</module>
-		<module>bs</module>
-		<module>fcs</module>
+		<module>payment-processing-system</module>
+		<module>broker-service</module>
+		<module>fraud-check-system</module>
 		<module>common</module>
 	</modules>
 
 	<properties>
-		<java.version>22</java.version> <!-- or 8, 17, etc., depending on what you want -->
+		<java.version>17</java.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -62,6 +64,41 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version> <!-- Use the latest version -->
+		</dependency>
+
+		<!-- JAXB Implementation (Reference Implementation) -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.3</version> <!-- Use the latest version -->
+		</dependency>
+
+		<!-- Camel -->
+
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-jackson-starter</artifactId>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.apache.camel.springboot</groupId>-->
+<!--			<artifactId>camel-servlet-starter</artifactId>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-activemq-starter</artifactId>
+		</dependency>
+
+
+		<!-- Spring Boot starter for Camel -->
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-spring-boot-starter</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -73,7 +110,13 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
+			<dependency>
+				<groupId>org.apache.camel.springboot</groupId>
+				<artifactId>camel-spring-boot-bom</artifactId>
+				<version>3.20.5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

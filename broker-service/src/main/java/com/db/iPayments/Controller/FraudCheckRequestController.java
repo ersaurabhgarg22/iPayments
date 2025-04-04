@@ -13,7 +13,7 @@ import static com.db.iPayments.Utils.Utils.generateUUID;
 import static com.db.iPayments.Utils.Utils.getISOUTCTimestamp;
 
 @RestController
-@RequestMapping("/ff")
+@RequestMapping("/bs")
 public class FraudCheckRequestController {
 
     private final LogService logService;

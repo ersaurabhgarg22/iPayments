@@ -8,7 +8,7 @@
         <artifactId>instant-payments</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>fcs</artifactId>
+    <artifactId>fraud-check-system</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.db.iPayments</groupId>
@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>com.db.iPayments</groupId>
-            <artifactId>bs</artifactId>
+            <artifactId>broker-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
