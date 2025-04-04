@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "b8443a08-5c1b-47f2-8244-e111f6fba8cc",
+		"name": "iPayments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43728193",
+		"_collection_link": "https://saurabhgarg-7909773.postman.co/workspace/Saurabh-Garg's-Workspace~a4a142a4-01ea-4f27-8086-bd462f53909d/collection/43728193-b8443a08-5c1b-47f2-8244-e111f6fba8cc?action=share&source=collection_link&creator=43728193"
+	},
+	"item": [
+		{
+			"name": "Success 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary1\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/process"
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong payerCountryCode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary1\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"US\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/process",
+				"description": "Wrong Country"
+			},
+			"response": []
+		},
+		{
+			"name": "Blacklist payerName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/process"
+			},
+			"response": []
+		},
+		{
+			"name": "Blacklist payeeName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary1\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Mark Imaginary\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/process"
+			},
+			"response": []
+		},
+		{
+			"name": "Blacklist Bank Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"BANK OF KUNLUN\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/process"
+			},
+			"response": []
+		},
+		{
+			"name": "API Success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary1\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/api/process"
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong payerCountryCode API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary1\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"US\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/api/process",
+				"description": "Wrong Country"
+			},
+			"response": []
+		},
+		{
+			"name": "Blacklist payerName API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark Imaginary\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"Example Bank\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/api/process"
+			},
+			"response": []
+		},
+		{
+			"name": "Blacklist Bank Name API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payerName\": \"Mark\",\n    \"payerBank\": \"Bank of Example\",\n    \"payerCountryCode\": \"USA\",\n    \"payerAccount\": \"1234567890123456\",\n    \"payeeName\": \"Jane Smith\",\n    \"payeeBank\": \"BANK OF KUNLUN\",\n    \"payeeCountryCode\": \"USA\",\n    \"payeeAccount\": \"6543210987654321\",\n    \"paymentInstruction\": \"Payment for invoice #12345\",\n    \"amount\": 1500.13,\n    \"currency\": \"USD\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/payment/api/process"
+			},
+			"response": []
+		}
+	]
+}
