@@ -83,27 +83,6 @@
 			<version>2.3.3</version> <!-- Use the latest version -->
 		</dependency>
 
-		<!-- Camel -->
-
-		<dependency>
-			<groupId>org.apache.camel.springboot</groupId>
-			<artifactId>camel-jackson-starter</artifactId>
-		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.apache.camel.springboot</groupId>-->
-<!--			<artifactId>camel-servlet-starter</artifactId>-->
-<!--		</dependency>-->
-		<dependency>
-			<groupId>org.apache.camel.springboot</groupId>
-			<artifactId>camel-activemq-starter</artifactId>
-		</dependency>
-
-
-		<!-- Spring Boot starter for Camel -->
-		<dependency>
-			<groupId>org.apache.camel.springboot</groupId>
-			<artifactId>camel-spring-boot-starter</artifactId>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -112,13 +91,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>2.7.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel.springboot</groupId>
-				<artifactId>camel-spring-boot-bom</artifactId>
-				<version>3.20.5</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
