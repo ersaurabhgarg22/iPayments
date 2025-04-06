@@ -36,6 +36,7 @@ public class FraudCheckListener {
             payment.setStatus(PaymentStatus.REJECTED);
             resultXml = xmlConverterService.convertToXml(payment);
         }
+        // Sending response back to FraudResponseListener
         jmsTemplate.convertAndSend("fcs.queue.response", resultXml);
     }
 }

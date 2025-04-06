@@ -28,6 +28,7 @@ public class PaymentReceiverController {
         this.fraudCheckConfig = fraudCheckConfig;
     }
 
+    // test method for restAPI check
     @GetMapping("/welcome")
     public String welcome() {
         return "Welcome to the instant payments project";
