@@ -36,4 +36,4 @@ Refer below files for UML
 
 **Overview of project:** Overview_iPayment_UML.drawio.png
 
-**InDepth details:** InDepth_iPayments_UML.drawio.png
+**InDepth details:** iPayment_Module_Interaction.drawio.png
